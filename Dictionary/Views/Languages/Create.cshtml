@@ -1,0 +1,14 @@
+﻿@model DAL.Entities.Language
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Название</label>
+        <input asp-for="Name" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Добавить</button>
+</form>

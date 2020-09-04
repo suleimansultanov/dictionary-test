@@ -1,0 +1,156 @@
+[
+{
+  "id": 1,
+  "original": 'Movie',
+  "translate": 'Фильм',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 2,
+  "original": 'Дом',
+  "translate": 'House',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 3,
+  "original": 'Ручка',
+  "translate": 'Pencil',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 4,
+  "original": 'Игрушка',
+  "translate": 'Toy',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 5,
+  "original": 'Машина',
+  "translate": 'Car',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 6,
+  "original": 'Книга',
+  "translate": 'Book',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 7,
+  "original": 'Лес',
+  "translate": 'Forest',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 8,
+  "original": 'Крыша',
+  "translate": 'Roof',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 9,
+  "original": 'Chicken',
+  "translate": 'Курица',
+  "originalId": 2,
+  "translateId": 1,
+},
+{
+  "id": 10,
+  "original": 'Stairway',
+  "translate": 'Лестница',
+  "originalId": 2,
+  "translateId": 1
+},
+{
+  "id": 11,
+  "original": 'Star',
+  "translate": 'Звезда',
+  "originalId": 2,
+  "translateId": 1
+},
+{
+  "id": 12,
+  "original": 'Nightmare',
+  "translate": 'Кошмар',
+  "originalId": 2,
+  "translateId": 1
+},
+{
+  "id": 13,
+  "original": 'Улица',
+  "translate": 'Street',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 14,
+  "original": 'Вес',
+  "translate": 'Weight',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 15,
+  "original": 'Коробка',
+  "translate": 'Box',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 16,
+  "original": 'Бомба',
+  "translate": 'Bomb',
+  "originalId": 1,
+  "translateId": 2
+},
+{
+  "id": 17,
+  "original": 'Wood',
+  "translate": 'Дерево',
+  "originalId": 2,
+  "translateId": 1
+},
+{
+  "id": 18,
+  "original": 'Carpet',
+  "translate": 'Ковер',
+  "originalId": 2,
+  "translateId": 1
+},
+{
+  "id": 19,
+  "original": 'Dog',
+  "translate": 'Собака',
+  "originalId": 2,
+  "translateId": 1
+},
+{
+  "id": 20,
+  "original": 'Circle',
+  "translate": 'Круг',
+  "originalId": 2,
+  "translateId": 1
+},
+{
+  "id": 21,
+  "original": 'Wave',
+  "translate": 'Волна',
+  "originalId": 2,
+  "translateId": 1
+},
+{
+  "id": 22,
+  "original": 'Здание',
+  "translate": 'Building',
+  "originalId": 2,
+  "translateId": 1
+}
+]

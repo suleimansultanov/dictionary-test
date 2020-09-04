@@ -1,0 +1,95 @@
+﻿@model IEnumerable<DAL.Entities.Word>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a asp-action="Create" class="btn btn-outline-primary">Создать</a>
+
+<table style="font-size: 20px;" class="table">
+    <thead>
+        <tr>
+            <th>Оригинал</th>
+            <th>Язык</th>
+            <th>Перевод</th>
+            <th>Язык</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr style="height: 200px;">
+                    <td>@item.Original</td>
+                    <td>@item.OriginalLanguage.Name</td>
+                    <td>@item.Translate</td>
+                    <td>@item.TranslateLanguage.Name</td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-primary">Редактировать</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-primary">Удалить</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        var page = 1;
+        var isScrollFinished = false;
+
+        var isAjaxCalled = false;
+        $(window).scroll(function() {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                isAjaxCalled = true;
+                if (!isScrollFinished) {
+                    SendAjax();
+                }
+            }
+        });
+
+        function SendAjax() {
+            console.log('ajax');
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: '/Words/Index/',
+                data: { page: page + 1 },
+                success: function(data) {
+                    if (data.length == 0) {
+                        isScrollFinished = true;
+                    } else {
+                        for (i = 0; i <= data.length - 1; i++) {
+                            var markup = "<tr style=\"height: 200px;\"><td> " +
+                                data[i].original +
+                                "</td> " +
+                                "<td> " +
+                                data[i].originalLanguage.name +
+                                " </td>" +
+                                "<td> " +
+                                data[i].translate +
+                                " </td>" +
+                                "<td> " +
+                                data[i].translateLanguage.name +
+                                " </td>" +
+                                "<td> <a href=/Words/Update/" +
+                                data[i].id +
+                                " class=\"btn btn-outline-primary\">Редактировать</a>" +
+                                "<a href=/Words/Delete/" +
+                                data[i].id +
+                                " class=\"btn btn-outline-primary\">Удалить</a> </td>" +
+                                " </tr>";
+                            var tableBody = $("table tbody");
+                            tableBody.append(markup);
+                    }
+                }
+                }
+            });
+            page++;
+        }
+    </script>
+}

@@ -1,0 +1,48 @@
+﻿@model Common.Dto.TranslateWordDto
+@{
+    ViewData["Title"] = "Index";
+    var languages = (IEnumerable<SelectListItem>)ViewBag.Languages;
+}
+
+<h1>Переводчик</h1>
+
+<form id="submitForm">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Слово</label>
+        <input asp-for="Word" type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Перевести с</label>
+        <select asp-for="TranslatingLangId" class="form-control" asp-items=@languages>
+            <option selected>Выберите...</option>
+        </select>
+        
+        <label for="exampleFormControlSelect2">На</label>
+        <select asp-for="TranslatedLangId" class="form-control" asp-items=@languages>
+            <option selected>Выберите...</option>
+        </select>
+    </div>
+    <button id="translate-button" type="button" class="btn btn-outline-primary">Перевести</button>
+</form>
+
+@section scripts
+{
+    <script>
+        $(document).on('click', '#translate-button', function () {
+
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: '/Dictionary/Translate/',
+                data: $("#submitForm").serialize(),
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.response);
+                    } else {
+                        alert(data.response);
+                    }
+                }
+            });
+        });
+    </script>
+}
